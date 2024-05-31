@@ -2,7 +2,7 @@ options:
   parameters:
     author: Jiangyan Liu
     catch_exceptions: 'True'
-    category: '[GRC Hier Blocks]'
+    category: Custom
     cmake_opt: ''
     comment: ''
     copyright: ''
@@ -11,7 +11,7 @@ options:
     gen_linking: dynamic
     generate_options: no_gui
     hier_block_src_path: '.:'
-    id: pic_frame
+    id: bpsk_test
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -22,13 +22,13 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: pic_frame
-    window_size: (1000,1000)
+    title: bpsk_test
+    window_size: 2000,2000
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 12.0]
+    coordinate: [8, 20.0]
     rotation: 0
     state: enabled
 
@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [304, 12.0]
+    coordinate: [280, 20.0]
     rotation: 0
     state: enabled
 - name: hdr_format
@@ -54,20 +54,20 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [496, 12.0]
+    coordinate: [464, 20.0]
     rotation: 0
     state: enabled
 - name: samp_rate
   id: variable
   parameters:
     comment: ''
-    value: '32000'
+    value: '10000'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [200, 12.0]
-    rotation: 0
+    coordinate: [184, 20.0]
+    rotation: 180
     state: enabled
 - name: blocks_file_sink_0
   id: blocks_file_sink
@@ -76,7 +76,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: output.jpg
+    file: res.txt
     type: byte
     unbuffered: 'True'
     vlen: '1'
@@ -84,8 +84,8 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1168, 468.0]
-    rotation: 0
+    coordinate: [208, 252.0]
+    rotation: 180
     state: true
 - name: blocks_file_source_0
   id: blocks_file_source
@@ -94,7 +94,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: /home/kloz/GRCcode/hb.jpg
+    file: text.txt
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -106,7 +106,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 148.0]
+    coordinate: [8, 132.0]
     rotation: 0
     state: true
 - name: blocks_head_0
@@ -114,18 +114,18 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    comment: Match the actual size of the picture(bytes)
+    comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_items: '21144'
+    num_items: '100'
     type: byte
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [960, 516.0]
-    rotation: 0
+    coordinate: [400, 268.0]
+    rotation: 180
     state: true
 - name: blocks_repack_bits_bb_1
   id: blocks_repack_bits_bb
@@ -144,7 +144,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 340.0]
+    coordinate: [1048, 140.0]
     rotation: 0
     state: true
 - name: blocks_repack_bits_bb_1_0
@@ -164,15 +164,15 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [520, 508.0]
-    rotation: 0
+    coordinate: [776, 260.0]
+    rotation: 180
     state: true
 - name: blocks_stream_to_tagged_stream_0
   id: blocks_stream_to_tagged_stream
   parameters:
     affinity: ''
     alias: ''
-    comment: The packet length doesnt matter
+    comment: It looks like the packet length doesnt matter
     len_tag_key: '"packet_len"'
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -183,7 +183,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [416, 172.0]
+    coordinate: [336, 156.0]
     rotation: 0
     state: true
 - name: blocks_tagged_stream_mux_0
@@ -203,7 +203,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [248, 336.0]
+    coordinate: [816, 136.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -222,7 +222,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 180.0]
+    coordinate: [168, 164.0]
     rotation: 0
     state: true
 - name: digital_correlate_access_code_xx_ts_0
@@ -241,8 +241,8 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [224, 500.0]
-    rotation: 0
+    coordinate: [976, 252.0]
+    rotation: 180
     state: true
 - name: digital_crc32_bb_0
   id: digital_crc32_bb
@@ -259,7 +259,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [648, 164.0]
+    coordinate: [560, 148.0]
     rotation: 0
     state: true
 - name: digital_crc32_bb_0_0
@@ -277,8 +277,8 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [728, 500.0]
-    rotation: 0
+    coordinate: [552, 252.0]
+    rotation: 180
     state: true
 - name: digital_protocol_formatter_bb_0
   id: digital_protocol_formatter_bb
@@ -294,104 +294,23 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [904, 172.0]
-    rotation: 0
-    state: true
-- name: header_bits
-  id: virtual_sink
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: Header Bytes
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1144, 180.0]
-    rotation: 0
-    state: enabled
-- name: virtual_sink_0_0
-  id: virtual_sink
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: Payload Bytes
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [904, 108.0]
-    rotation: 0
-    state: enabled
-- name: virtual_sink_1
-  id: virtual_sink
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: pkt_out
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [696, 348.0]
-    rotation: 0
-    state: true
-- name: virtual_source_0
-  id: virtual_source
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: Header Bytes
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [16, 332.0]
-    rotation: 0
-    state: enabled
-- name: virtual_source_0_0
-  id: virtual_source
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: Payload Bytes
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [16, 388.0]
-    rotation: 0
-    state: enabled
-- name: virtual_source_1
-  id: virtual_source
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: pkt_out
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [24, 516.0]
+    coordinate: [696, 60.0]
     rotation: 0
     state: true
 
 connections:
 - [blocks_file_source_0, '0', blocks_throttle_0, '0']
 - [blocks_head_0, '0', blocks_file_sink_0, '0']
-- [blocks_repack_bits_bb_1, '0', virtual_sink_1, '0']
+- [blocks_repack_bits_bb_1, '0', digital_correlate_access_code_xx_ts_0, '0']
 - [blocks_repack_bits_bb_1_0, '0', digital_crc32_bb_0_0, '0']
 - [blocks_stream_to_tagged_stream_0, '0', digital_crc32_bb_0, '0']
 - [blocks_tagged_stream_mux_0, '0', blocks_repack_bits_bb_1, '0']
 - [blocks_throttle_0, '0', blocks_stream_to_tagged_stream_0, '0']
 - [digital_correlate_access_code_xx_ts_0, '0', blocks_repack_bits_bb_1_0, '0']
+- [digital_crc32_bb_0, '0', blocks_tagged_stream_mux_0, '1']
 - [digital_crc32_bb_0, '0', digital_protocol_formatter_bb_0, '0']
-- [digital_crc32_bb_0, '0', virtual_sink_0_0, '0']
 - [digital_crc32_bb_0_0, '0', blocks_head_0, '0']
-- [digital_protocol_formatter_bb_0, '0', header_bits, '0']
-- [virtual_source_0, '0', blocks_tagged_stream_mux_0, '0']
-- [virtual_source_0_0, '0', blocks_tagged_stream_mux_0, '1']
-- [virtual_source_1, '0', digital_correlate_access_code_xx_ts_0, '0']
+- [digital_protocol_formatter_bb_0, '0', blocks_tagged_stream_mux_0, '0']
 
 metadata:
   file_format: 1

@@ -2,7 +2,7 @@ options:
   parameters:
     author: Jiangyan Liu
     catch_exceptions: 'True'
-    category: '[GRC Hier Blocks]'
+    category: Custom
     cmake_opt: ''
     comment: ''
     copyright: ''
@@ -11,7 +11,7 @@ options:
     gen_linking: dynamic
     generate_options: no_gui
     hier_block_src_path: '.:'
-    id: pic_frame
+    id: bpsk_test
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -22,13 +22,13 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: pic_frame
-    window_size: (1000,1000)
+    title: bpsk_test
+    window_size: 2000,2000
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 12.0]
+    coordinate: [8, 20.0]
     rotation: 0
     state: enabled
 
@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [648, 12.0]
+    coordinate: [640, 20.0]
     rotation: 0
     state: enabled
 - name: bpsk
@@ -61,7 +61,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 124.0]
+    coordinate: [8, 132.0]
     rotation: 0
     state: true
 - name: excess_bw
@@ -73,19 +73,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [360, 12.0]
-    rotation: 0
-    state: enabled
-- name: hdr_format
-  id: variable
-  parameters:
-    comment: header_format_default
-    value: digital.header_format_default(access_key, 0)
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [648, 76.0]
+    coordinate: [352, 20.0]
     rotation: 0
     state: enabled
 - name: loop_order
@@ -97,7 +85,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [304, 76.0]
+    coordinate: [296, 84.0]
     rotation: 0
     state: enabled
 - name: nfilts
@@ -109,7 +97,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [456, 12.0]
+    coordinate: [448, 20.0]
     rotation: 0
     state: enabled
 - name: phase_bw
@@ -121,7 +109,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [560, 76.0]
+    coordinate: [552, 84.0]
     rotation: 0
     state: enabled
 - name: pluto_ip
@@ -133,7 +121,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [192, 76.0]
+    coordinate: [184, 84.0]
     rotation: 0
     state: true
 - name: rrc_taps
@@ -145,7 +133,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [400, 76.0]
+    coordinate: [392, 84.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -157,8 +145,8 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [192, 12.0]
-    rotation: 0
+    coordinate: [184, 20.0]
+    rotation: 180
     state: enabled
 - name: sps
   id: variable
@@ -169,7 +157,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [288, 12.0]
+    coordinate: [280, 20.0]
     rotation: 0
     state: enabled
 - name: timing_loop_bw
@@ -181,7 +169,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [528, 12.0]
+    coordinate: [520, 20.0]
     rotation: 0
     state: enabled
 - name: blocks_file_sink_0
@@ -191,7 +179,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: output.jpg
+    file: res.txt
     type: byte
     unbuffered: 'True'
     vlen: '1'
@@ -199,7 +187,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [128, 580.0]
+    coordinate: [120, 516.0]
     rotation: 180
     state: true
 - name: blocks_file_source_0
@@ -209,7 +197,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: hb.jpg
+    file: text.txt
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -221,7 +209,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 236.0]
+    coordinate: [8, 196.0]
     rotation: 0
     state: true
 - name: blocks_head_0
@@ -229,17 +217,17 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    comment: Match the actual size of the picture(bytes)
+    comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_items: '21144'
+    num_items: '2000'
     type: byte
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [320, 596.0]
+    coordinate: [312, 532.0]
     rotation: 180
     state: true
 - name: blocks_repack_bits_bb_1_0
@@ -259,7 +247,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 580.0]
+    coordinate: [688, 524.0]
     rotation: 180
     state: true
 - name: blocks_stream_to_tagged_stream_0
@@ -278,7 +266,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [336, 260.0]
+    coordinate: [328, 220.0]
     rotation: 0
     state: true
 - name: blocks_tagged_stream_mux_0
@@ -298,7 +286,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [824, 240.0]
+    coordinate: [816, 200.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -317,7 +305,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [176, 268.0]
+    coordinate: [168, 228.0]
     rotation: 0
     state: true
 - name: digital_constellation_decoder_cb_0
@@ -333,7 +321,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [752, 372.0]
+    coordinate: [744, 308.0]
     rotation: 0
     state: true
 - name: digital_constellation_modulator_0
@@ -355,7 +343,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1056, 228.0]
+    coordinate: [1048, 188.0]
     rotation: 0
     state: enabled
 - name: digital_correlate_access_code_xx_ts_0
@@ -374,7 +362,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [896, 572.0]
+    coordinate: [888, 516.0]
     rotation: 180
     state: true
 - name: digital_costas_loop_cc_0
@@ -392,7 +380,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [512, 376.0]
+    coordinate: [504, 312.0]
     rotation: 0
     state: enabled
 - name: digital_crc32_bb_0
@@ -410,7 +398,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [560, 252.0]
+    coordinate: [552, 212.0]
     rotation: 0
     state: true
 - name: digital_crc32_bb_0_0
@@ -428,7 +416,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [472, 572.0]
+    coordinate: [464, 516.0]
     rotation: 180
     state: true
 - name: digital_diff_decoder_bb_0
@@ -445,7 +433,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [976, 364.0]
+    coordinate: [968, 300.0]
     rotation: 0
     state: true
 - name: digital_pfb_clock_sync_xxx_0
@@ -468,7 +456,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 404.0]
+    coordinate: [232, 340.0]
     rotation: 0
     state: enabled
 - name: digital_protocol_formatter_bb_0
@@ -477,7 +465,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    format: digital.header_format_default(access_key, 0)
+    format: digital.header_format_default(access_key, 1)
     len_tag_key: '"packet_len"'
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -485,7 +473,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [688, 156.0]
+    coordinate: [672, 84.0]
     rotation: 0
     state: true
 - name: iio_pluto_sink_0
@@ -511,7 +499,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1288, 196.0]
+    coordinate: [1280, 156.0]
     rotation: 0
     state: enabled
 - name: iio_pluto_source_0
@@ -542,7 +530,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 372.0]
+    coordinate: [8, 308.0]
     rotation: 0
     state: enabled
 
