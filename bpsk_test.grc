@@ -61,7 +61,7 @@ blocks:
     bus_structure: null
     coordinate: [1016, 180.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_char_to_float_0_0_0
   id: blocks_char_to_float
   parameters:
@@ -78,7 +78,7 @@ blocks:
     bus_structure: null
     coordinate: [560, 188.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_file_sink_0
   id: blocks_file_sink
   parameters:
@@ -127,7 +127,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_items: '160'
+    num_items: '32'
     type: byte
     vlen: '1'
   states:
@@ -401,7 +401,7 @@ blocks:
     bus_structure: null
     coordinate: [1168, 164.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: qtgui_time_sink_x_0_0_0
   id: qtgui_time_sink_x
   parameters:
@@ -498,7 +498,7 @@ blocks:
     bus_structure: null
     coordinate: [712, 172.0]
     rotation: 0
-    state: disabled
+    state: enabled
 
 connections:
 - [blocks_char_to_float_0_0, '0', qtgui_time_sink_x_0_0, '0']

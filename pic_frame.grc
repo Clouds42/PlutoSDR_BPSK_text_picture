@@ -117,7 +117,7 @@ blocks:
     comment: Match the actual size of the picture(bytes)
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_items: '21144'
+    num_items: '20000'
     type: byte
     vlen: '1'
   states:
