@@ -4,3 +4,5 @@
 *.PNG
 *.py
 .vscode/
+res.txt
+*.m
