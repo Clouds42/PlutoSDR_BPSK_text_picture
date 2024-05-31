@@ -10,7 +10,7 @@
 
 ## bpsk_test
 
-自组数据帧实现基于 BPSK 的文本传输，文本从文件中获取，数据帧结构为`| access_code | pkt_len | pkt_len | payload |`，使用[Correlate Access Code - Tag Stream](https://wiki.gnuradio.org/index.php/Correlate_Access_Code_-_Tag_Stream)模块提取 payload，并转换回文本存储本地。
+自组数据帧实现基于 BPSK 的文本传输，文本从文件中获取，数据帧结构为`| access_code | pkt_len | pkt_len | payload |`，使用 [Correlate Access Code - Tag Stream](https://wiki.gnuradio.org/index.php/Correlate_Access_Code_-_Tag_Stream) 模块提取 payload，并转换回文本存储本地。
 
 ## bpsk_succ
 
@@ -18,11 +18,11 @@
 
 ## pic_frame & pic_frame_sdr
 
-使用 GNU Radio 的[Protocol Formatter](https://wiki.gnuradio.org/index.php/Protocol_Formatter)及 digital 接口（[Python](https://www.gnuradio.org/doc/sphinx-3.7.3/digital/index.html#module-gnuradio.digital)/[C++](https://www.gnuradio.org/doc/doxygen-v3.10.9.1/group__packet__operators__blk.html)）程序化组帧传输图片。
+使用 GNU Radio 的 [Protocol Formatter](https://wiki.gnuradio.org/index.php/Protocol_Formatter) 及 digital 接口（[Python](https://www.gnuradio.org/doc/sphinx-3.7.3/digital/index.html#module-gnuradio.digital) / [C++](https://www.gnuradio.org/doc/doxygen-v3.10.9.1/group__packet__operators__blk.html)）程序化组帧传输图片。
 
 ## text_frame & text_frame_sdr
 
-使用[Protocol Formatter](https://wiki.gnuradio.org/index.php/Protocol_Formatter)传输文本。
+使用 [Protocol Formatter](https://wiki.gnuradio.org/index.php/Protocol_Formatter) 传输文本。
 
 # 效果图
 
